@@ -15,7 +15,7 @@ operating on a system.
 '''
 
 
-__version__ = '0.0.0-alpha'
+__version__ = '0.0.0-pre-alpha-build-1'
 
 from .cli import run
 from .install import install
