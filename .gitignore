@@ -1,3 +1,7 @@
+# Dists and Builds
+dist
+build
+
 # we are not supplying any channels by default
 CLMsgr/chs/*
 ! CLMsgr/chs/__init__.py

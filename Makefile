@@ -1,5 +1,5 @@
 
-dist: setup.py remindme
+dist: setup.py CLMsgr
 	cp README.md README.txt
 	python setup.py sdist upload
 	rm README.txt
