@@ -61,7 +61,8 @@ def arg_parser():
                              action='store_true',
                              help='see users you can message in the channel')
     channel_mgt.add_argument('-a', '--add',
-                             action='store_true',
+                             metavar='username',
+                             dest='add', nargs=1,
                              help='add a account to the channel')
     channel_mgt.add_argument('-acc', '--accounts',
                              action='store_true',
@@ -172,9 +173,8 @@ def run():
 
     # Adding channnels
     if args['add']:
-        if targets_acquired():
-            username = raw_input('Username: ')
-            api.account_mgr('add', targets=targets, username=username)
+        if targets_acquired(1):
+            api.account_mgr('add', targets=targets, username=args['add'][0])
 
     # Removing channels
     if args['remove']:

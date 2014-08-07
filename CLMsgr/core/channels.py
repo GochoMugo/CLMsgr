@@ -29,7 +29,7 @@ def execute_aim(name, init, aim, msg, channel=channel.channel):
         else:
             io.write(name, result, 1)
     except TypeError as err:
-        io.write(name, '{0} Unsupported, {1}'.format(aim, err), 1)
+        io.write(name, '{0} Unsupported'.format(aim), 1)
     except Exception as err:
         io.write(name, '{0} Errored due to {1}'.format(aim, err), 1)
 #        io.write(name, '{0} Errored'.format(aim), 1)

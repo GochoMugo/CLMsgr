@@ -4,6 +4,7 @@ Class for a Channel Object passed to channels.
 Dependencies: .accounts
 '''
 
+import getpass
 from . import accounts
 from . import io
 from . import messages
@@ -18,7 +19,7 @@ class channel:
 
     def listing(self, heading, content, status=2):
         'Handles listing of iterables'
-        io.listing(self.name, heading, content, status)
+        io.listing(self.__name, heading, content, status)
 
     def read(self, prompt):
         'Handles getting input from User'
@@ -55,4 +56,5 @@ class channel:
         return accounts.save_one(self.__name, key, value)
 
     def cache(self, items):
+        # Storing Items for a Channel
         pass

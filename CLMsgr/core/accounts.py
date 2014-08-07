@@ -52,7 +52,7 @@ def read_one(name, field, db=accounts_db):
             sql = 'SELECT {0} FROM accounts WHERE type=="{1}"'.format(field, name)
             result = cursor.execute(sql).fetchone()
             if result:
-                return result
+                return result[0]
             return None
         except sqlite3.OperationalError:
             try:
@@ -101,7 +101,6 @@ def search_username(name):
     This is just a wrapper around read_one()'''
 
     username = read_one(name, 'username')
-    print(username)
     if username:
         return username
     return False
@@ -123,7 +122,7 @@ def add_account(name, username, db=accounts_db):
                 sql = sql.format(username, name)
                 cursor.execute(sql)
             else:
-                sql = 'INSERT INTO accounts VALUES (?,?)'
+                sql = 'INSERT INTO accounts(type, username) VALUES (?,?)'
                 cursor.execute(sql, (name, username,))
             db.commit()
             return True
@@ -157,7 +156,7 @@ def dummy_init(username=None):
     return True
 
 
-def manage(aim, targets=[], username=None, init=dummy_init):
+def manage(aim, targets=[], username=None):
     '''Manages the accounts.
     `aim` may be 'add/remove/view'
     `targets` is an array with the names of the channels
@@ -166,17 +165,21 @@ def manage(aim, targets=[], username=None, init=dummy_init):
     # adding new channels
     if aim == 'add':
         for target in targets:
-            if add_account(target, username) and init():
+            if add_account(target, username):
                 io.write(target, 'Account added')
+                return True
             else:
                 io.write(target, 'Account failed to be added', 1)
+                return False
     # removing channels
     elif aim == 'remove':
         for target in targets:
             if remove_account(target):
                 io.write(target, 'Account removed')
+                return True
             else:
                 io.write(target, 'Account failed to be removed', 1)
+                return False
     # viewing accounts registered in channels
     elif aim == 'view':
         all_accounts = read()
@@ -185,6 +188,7 @@ def manage(aim, targets=[], username=None, init=dummy_init):
         else:
             for account in all_accounts:
                 io.write(account['type'], account['username'])
+        return True
 
 
 # Ensures the accounts table is created/exists

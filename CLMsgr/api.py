@@ -39,7 +39,20 @@ def channel_runner(aim, **kwargs):
 
 
 def account_mgr(aim, targets=[], username=None):
-    core.accounts.manage(aim, targets, username)
+    # Adding account to DB
+    if not core.accounts.manage(aim, targets, username):
+        return
+    if aim == 'add':
+        for target in targets:
+            # inject channel instance
+            channel = channel_lookup(target)
+            if channel['install']: # is None is no install is required
+                if channel['install'](core.channel.channel(channel['name'])):
+                    # success
+                    core.io.write(channel['name'], 'Installation completed well')
+                else:
+                    # error
+                    core.io.write(channel['name'], 'Failed to Install', 1)
 
 
 def message_mgr(aim, targets=None):

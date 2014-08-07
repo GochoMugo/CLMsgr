@@ -11,6 +11,7 @@ import shutil
 from.chs import channels as get_channels
 from .core import __app_dir__
 from .core import __chs_dir__
+from .core import channel
 from .core import io
 
 # NOTE: we can NOT import `api` here cause this module
