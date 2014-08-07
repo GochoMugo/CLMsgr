@@ -28,6 +28,7 @@ Currently, channel scripts have to be written in **Python**. In Future, if all g
 **Contributors:**
 
 1. [GochoMugo](https:github.com/GochoMugo)
+
 `<put your name here>`
 
 ## To Do ##
@@ -43,7 +44,7 @@ This section really pokes your mind to know where to really help.
 
 The CLMsgr and its source code is licensed under the [MIT][MIT] License.
 
-[API]:https://github.com/GochoMugo/CLMsgr "channel API"
-[Dependencies]:https://github.com/GochoMugo/CLMsgr "'Dependencies' is a bitch" 
-[Fork]:https://github.com/GochoMugo/CLMsgr "Fork a Repo"
-[MIT]:https://github.com/GochoMugo/tree/master/License "License for you and me"
+[API]:https://github.com/GochoMugo/CLMsgr/wiki/channel-API "channel API"
+[Dependencies]:https://github.com/GochoMugo/CLMsgr/wiki/Dependencies "'Dependencies' is a bitch" 
+[Fork]:https://github.com/GochoMugo/CLMsgr/fork "Fork a Repo"
+[MIT]:https://github.com/GochoMugo/CLMsgr/blob/master/LICENSE "License for you and me"
