@@ -1,0 +1,7 @@
+# we are not supplying any channels by default
+CLMsgr/chs/*
+! CLMsgr/chs/__init__.py
+
+# pycache and python byte codes
+*pyc
+CLMsgr/__pycache__
