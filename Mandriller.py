@@ -27,9 +27,9 @@ def install(channel):
     key_stored = channel.store_config('key', key)
     names_stored = channel.store_config('names', names)
     if key_stored and names_stored:
-        return True, 'Installed Successfully'
+        return True
     else:
-        return False, 'Installation failed'
+        return False
 
 
 def init(aim, msg, channel):
