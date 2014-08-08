@@ -15,7 +15,10 @@ clean:
 			CLMsgr/chs/*pyc \
 			CLMsgr/core/__pycache__ \
 			CLMsgr/core/*pyc \
-			.accounts.db
+			.accounts.db \
+			setup.cfg \
+			build dist \
+			CLMsgr.egg-info
 	@echo 'Cleaned....'
 
 .PHONY: dist, tests, clean

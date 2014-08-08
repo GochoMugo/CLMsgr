@@ -189,7 +189,3 @@ def manage(aim, targets=[], username=None):
             for account in all_accounts:
                 io.write(account['type'], account['username'])
         return True
-
-
-# Ensures the accounts table is created/exists
-read()

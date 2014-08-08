@@ -8,15 +8,16 @@ easier adding and removing channels into the app
 
 
 from . import chs
-from . import install
 from . import core
+from . import install
+
 
 'Importing all the methods here for the External Use of API e.g. api.write()'
 from .core.io import ask
 from .core.io import write
 __app_dir__ = core.__app_dir__
-__installation_dir__ = core.__installation_dir__
 __chs_dir__ = core.__chs_dir__
+__installation_dir__ = core.__installation_dir__
 
 
 def channels():

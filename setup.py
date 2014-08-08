@@ -8,7 +8,8 @@ Licensed under the MIT License. For Open Source Initiative (OSI)
 Contribute to the Project at https://github.com/GochoMugo/CLMsgr
 '''
 
-from distutils.core import setup
+from setuptools import find_packages
+from setuptools import setup
 import CLMsgr
 
 
@@ -39,7 +40,7 @@ setup(
         "Programming Language :: Python :: 2",
         "Programming Language :: Python :: 2.7",
     ],
-    packages=["CLMsgr"],
+    packages=find_packages(),
     install_requires=[
         "argparse",
         "colorama",
