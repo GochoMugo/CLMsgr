@@ -1,1 +1,4 @@
 include docs
+
+prune CLMsgr/chs
+include CLMsgr/chs/__init__.py

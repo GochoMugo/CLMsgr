@@ -17,7 +17,7 @@ clean:
 			CLMsgr/core/*pyc \
 			.accounts.db \
 			setup.cfg \
-			build dist \
+			build dist temp \
 			CLMsgr.egg-info
 	@echo 'Cleaned....'
 
